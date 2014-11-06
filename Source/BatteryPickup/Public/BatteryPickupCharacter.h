@@ -20,7 +20,7 @@ class ABatteryPickupCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Power)
 	TSubobjectPtr<USphereComponent> m_collectSphere;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Power)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category=Power)
 	float m_powerLevel;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Power)
