@@ -16,8 +16,8 @@ class BATTERYPICKUP_API ASpawnVolume : public AActor
 	UPROPERTY(VisibleInstanceOnly, Category=Spawning)
 	TSubobjectPtr<UBoxComponent> m_WhereToSpawn;
 
-	UPROPERTY(VisibleInstanceOnly, Category = Spawning)
-	TSubclassOf<class ABPickup> m_WhatToSpawn;
+	UPROPERTY(EditAnyWhere, Category = Spawning)
+	TSubclassOf<AActor> m_WhatToSpawn;
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Spawning)
 	float m_spawnDelayRangeLow;
@@ -28,10 +28,14 @@ class BATTERYPICKUP_API ASpawnVolume : public AActor
 	UFUNCTION(BlueprintPure, Category = Spawning)
 	FVector GetRandomPointInVolume();
 
+	virtual void Tick(float DeltaSeconds) override;
+
 
 private:
 	float GetRandomSpawnDelay();
 	float m_SpawnDelay;
 	void SpawnPickup();
+	
+	float m_SpawnTime;
 
 };

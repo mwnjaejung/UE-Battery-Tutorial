@@ -15,6 +15,9 @@ ASpawnVolume::ASpawnVolume(const class FPostConstructInitializeProperties& PCIP)
 	m_spawnDelayRangeLow = 1.f;
 	m_spawnDelayRangeHigh = 4.5f;
 	m_SpawnDelay = GetRandomSpawnDelay();
+
+	m_SpawnTime = 0;
+	PrimaryActorTick.bCanEverTick = true;
 }
 
 
@@ -37,7 +40,7 @@ void ASpawnVolume::SpawnPickup()
 			spawnRotation.Pitch = FMath::FRand() * 360.f;
 			spawnRotation.Roll = FMath::FRand() * 360.f;
 
-			ABPickup * const spawnedPickup = world->SpawnActor<ABPickup>(m_WhatToSpawn, spawnLocation, spawnRotation, spawnParams);
+			AActor * const spawnedPickup = world->SpawnActor<AActor>(m_WhatToSpawn, spawnLocation, spawnRotation, spawnParams);
 		}
 	}
 }
@@ -71,3 +74,19 @@ FVector ASpawnVolume::GetRandomPointInVolume()
 	return location;
 }
 
+
+void ASpawnVolume::Tick(float DeltaSeconds)
+{
+	m_SpawnTime += DeltaSeconds;
+
+	bool bShouldSpawn = (m_SpawnTime > m_SpawnDelay);
+
+	if (bShouldSpawn)
+	{
+		SpawnPickup();
+
+		m_SpawnTime -= m_SpawnDelay;
+
+		m_SpawnDelay = GetRandomSpawnDelay();
+	}
+}
