@@ -16,6 +16,24 @@ class ABatteryPickupCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	TSubobjectPtr<class UCameraComponent> FollowCamera;
 
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Power)
+	TSubobjectPtr<USphereComponent> m_collectSphere;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Power)
+	float m_powerLevel;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Power)
+	float m_baseSpeed;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Power)
+	float m_speedFactor;
+
+
+	virtual void Tick(float DeltaSeconds) override;
+
+
+
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseTurnRate;
@@ -25,6 +43,14 @@ class ABatteryPickupCharacter : public ACharacter
 	float BaseLookUpRate;
 
 protected:
+
+	UFUNCTION(BlueprintCallable, Category=Power)
+	void CollectBatteries();
+
+	UFUNCTION(BlueprintImplementableEvent, Category=Power)
+	void PowerUp(const float batteryPower);
+
+
 
 	/** Called for forwards/backward input */
 	void MoveForward(float Value);

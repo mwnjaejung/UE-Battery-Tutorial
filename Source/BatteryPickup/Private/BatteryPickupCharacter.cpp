@@ -2,6 +2,8 @@
 
 #include "BatteryPickup.h"
 #include "BatteryPickupCharacter.h"
+#include "BatteryBPickup.h"
+
 
 //////////////////////////////////////////////////////////////////////////
 // ABatteryPickupCharacter
@@ -9,6 +11,15 @@
 ABatteryPickupCharacter::ABatteryPickupCharacter(const class FPostConstructInitializeProperties& PCIP)
 	: Super(PCIP)
 {
+	m_powerLevel = 2000.f;
+	m_speedFactor = 0.75f;
+	m_baseSpeed = 10.f;
+
+	m_collectSphere = PCIP.CreateDefaultSubobject<USphereComponent>(this, "CollectionSphere");
+	m_collectSphere->AttachTo(RootComponent);
+	m_collectSphere->SetSphereRadius(200.f);
+
+
 	// Set size for collision capsule
 	CapsuleComponent->InitCapsuleSize(42.f, 96.0f);
 
@@ -51,6 +62,9 @@ void ABatteryPickupCharacter::SetupPlayerInputComponent(class UInputComponent* I
 	check(InputComponent);
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	InputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+
+	InputComponent->BindAction("CollectPickups", IE_Pressed, this, &ABatteryPickupCharacter::CollectBatteries);
+
 
 	InputComponent->BindAxis("MoveForward", this, &ABatteryPickupCharacter::MoveForward);
 	InputComponent->BindAxis("MoveRight", this, &ABatteryPickupCharacter::MoveRight);
@@ -125,4 +139,38 @@ void ABatteryPickupCharacter::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+
+void ABatteryPickupCharacter::CollectBatteries()
+{
+	float batteryPower = 0.f;
+
+	TArray<AActor*>  collectAtors;
+	m_collectSphere->GetOverlappingActors(collectAtors);
+
+	for(auto actor : collectAtors)
+	{
+		ABatteryBPickup * const testBattery = Cast<ABatteryBPickup>(actor);
+
+		if (testBattery && !testBattery->IsPendingKill() && testBattery->m_IsActive)
+		{
+			batteryPower += testBattery->m_powerLevel;
+
+			testBattery->OnPickedUp();
+			testBattery->m_IsActive = false;
+		}
+	}
+
+	if (batteryPower > 0.f)
+	{
+		PowerUp(batteryPower);
+	}
+}
+
+
+void ABatteryPickupCharacter::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	CharacterMovement->MaxWalkSpeed = m_speedFactor * m_baseSpeed + m_powerLevel;
 }
