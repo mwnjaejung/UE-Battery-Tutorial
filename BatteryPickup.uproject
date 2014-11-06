@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{09606305-43B9-648D-664C-42B50D4B1F27}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "BatteryPickup",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
