@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\BatteryPickup.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{ADE63564-88E2-4B1A-8204-D166E66E1F03}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\BatteryPickup.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\BatteryPickupEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{A02D0BEB-DC32-4C71-965E-5F60A905130F}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\BatteryPickup">
+			<UniqueIdentifier>{A7200660-0B9C-4B24-A065-FED18C40A2D0}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\BatteryPickup\BatteryPickup.Build.cs">
+			<Filter>Source\BatteryPickup</Filter>
+		</None >
+		<Filter Include="Source\BatteryPickup\Private">
+			<UniqueIdentifier>{43CFAEBC-3A31-4113-9FC4-20C87779BD6D}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\BatteryPickup\Private\BatteryBPickup.cpp">
+			<Filter>Source\BatteryPickup\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\BatteryPickup\Private\BatteryPickup.cpp">
+			<Filter>Source\BatteryPickup\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\BatteryPickup\Private\BatteryPickupCharacter.cpp">
+			<Filter>Source\BatteryPickup\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\BatteryPickup\Private\BatteryPickupGameMode.cpp">
+			<Filter>Source\BatteryPickup\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\BatteryPickup\Private\BPickup.cpp">
+			<Filter>Source\BatteryPickup\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\BatteryPickup\Private\SpawnVolume.cpp">
+			<Filter>Source\BatteryPickup\Private</Filter>
+		</ClCompile >
+		<Filter Include="Source\BatteryPickup\Public">
+			<UniqueIdentifier>{134E69D1-63B1-45D9-8302-4D8FD3D3AC1A}</UniqueIdentifier>
+		</Filter>
+		<ClInclude Include="..\..\Source\BatteryPickup\Public\BatteryBPickup.h">
+			<Filter>Source\BatteryPickup\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\BatteryPickup\Public\BatteryPickup.h">
+			<Filter>Source\BatteryPickup\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\BatteryPickup\Public\BatteryPickupCharacter.h">
+			<Filter>Source\BatteryPickup\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\BatteryPickup\Public\BatteryPickupGameMode.h">
+			<Filter>Source\BatteryPickup\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\BatteryPickup\Public\BPickup.h">
+			<Filter>Source\BatteryPickup\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\BatteryPickup\Public\SpawnVolume.h">
+			<Filter>Source\BatteryPickup\Public</Filter>
+		</ClInclude >
+		<Filter Include="Source\BatteryPickup\Resources">
+			<UniqueIdentifier>{16826E26-9990-431D-95AC-82620672C666}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Source\BatteryPickup\Resources\Windows">
+			<UniqueIdentifier>{5AFCBAC7-A409-47C4-9FA1-1AB87C1DEE5A}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\BatteryPickup\Resources\Windows\BatteryPickup.ico">
+			<Filter>Source\BatteryPickup\Resources\Windows</Filter>
+		</None >
+		<ResourceCompile Include="..\..\Source\BatteryPickup\Resources\Windows\BatteryPickup.rc">
+			<Filter>Source\BatteryPickup\Resources\Windows</Filter>
+		</ResourceCompile >
+	</ItemGroup>
+</Project>
