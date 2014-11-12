@@ -5,7 +5,7 @@
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\UnrealPak\UnrealPak.Target.cs" />
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\UnrealPak\UnrealPak.Build.cs" />
 		<Filter Include="Private">
-			<UniqueIdentifier>{44FD0F23-E54C-47B9-A301-8A2EAD074044}</UniqueIdentifier>
+			<UniqueIdentifier>{57C19810-D407-4517-856E-71F663FBCFBB}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\UnrealPak\Private\KeyGenerator.cpp">
 			<Filter>Private</Filter>
@@ -29,7 +29,7 @@
 			<Filter>Private</Filter>
 		</ClInclude >
 		<Filter Include="Resources">
-			<UniqueIdentifier>{D7079616-ACE1-438E-A27A-B244637D43BC}</UniqueIdentifier>
+			<UniqueIdentifier>{B061874E-1B06-4231-9982-0392728AE775}</UniqueIdentifier>
 		</Filter>
 		<ResourceCompile Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\UnrealPak\Resources\PCLaunch.rc">
 			<Filter>Resources</Filter>

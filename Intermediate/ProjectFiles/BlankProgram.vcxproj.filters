@@ -5,7 +5,7 @@
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\BlankProgram\BlankProgram.Target.cs" />
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\BlankProgram\BlankProgram.Build.cs" />
 		<Filter Include="Private">
-			<UniqueIdentifier>{72511E89-E21A-4466-BDB3-8C557848614A}</UniqueIdentifier>
+			<UniqueIdentifier>{C0582D97-F604-43D3-A573-98FBE86C5289}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\BlankProgram\Private\BlankProgram.cpp">
 			<Filter>Private</Filter>

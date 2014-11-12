@@ -5,7 +5,7 @@
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\UnrealSync\UnrealSync.Target.cs" />
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\UnrealSync\UnrealSync.Build.cs" />
 		<Filter Include="Private">
-			<UniqueIdentifier>{2E69CD71-78B7-4C15-80AD-65A0CD77875E}</UniqueIdentifier>
+			<UniqueIdentifier>{A6982901-9E29-4C1A-8A26-F9A1E42B7EA6}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\UnrealSync\Private\GUI.cpp">
 			<Filter>Private</Filter>
@@ -38,7 +38,7 @@
 			<Filter>Private</Filter>
 		</ClInclude >
 		<Filter Include="Private\Windows">
-			<UniqueIdentifier>{0FBEDC8A-6BF5-4EF1-9867-C585DDC76FB7}</UniqueIdentifier>
+			<UniqueIdentifier>{15418FDE-5BF3-4C21-8C55-B516F8FC9CAE}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\UnrealSync\Private\Windows\UnrealSyncMainWindows.cpp">
 			<Filter>Private\Windows</Filter>

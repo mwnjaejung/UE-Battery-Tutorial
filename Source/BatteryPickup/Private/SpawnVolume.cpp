@@ -7,6 +7,7 @@
 
 ASpawnVolume::ASpawnVolume(const class FPostConstructInitializeProperties& PCIP)
 	: Super(PCIP)
+	, m_isSpawningEnable(true)
 {
 	m_WhereToSpawn = PCIP.CreateDefaultSubobject<UBoxComponent>(this, "WhereToSpawn");
 
@@ -77,16 +78,31 @@ FVector ASpawnVolume::GetRandomPointInVolume()
 
 void ASpawnVolume::Tick(float DeltaSeconds)
 {
-	m_SpawnTime += DeltaSeconds;
-
-	bool bShouldSpawn = (m_SpawnTime > m_SpawnDelay);
-
-	if (bShouldSpawn)
+	if (m_isSpawningEnable)
 	{
-		SpawnPickup();
+		m_SpawnTime += DeltaSeconds;
 
-		m_SpawnTime -= m_SpawnDelay;
+		bool bShouldSpawn = (m_SpawnTime > m_SpawnDelay);
 
-		m_SpawnDelay = GetRandomSpawnDelay();
+		if (bShouldSpawn)
+		{
+			SpawnPickup();
+
+			m_SpawnTime -= m_SpawnDelay;
+
+			m_SpawnDelay = GetRandomSpawnDelay();
+		}
 	}
+}
+
+
+void ASpawnVolume::EnableSpawning()
+{
+	m_isSpawningEnable = true;
+}
+
+
+void  ASpawnVolume::DisableSpawning()
+{
+	m_isSpawningEnable = false;
 }

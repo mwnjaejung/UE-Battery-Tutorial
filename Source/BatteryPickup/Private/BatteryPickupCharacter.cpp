@@ -3,6 +3,7 @@
 #include "BatteryPickup.h"
 #include "BatteryPickupCharacter.h"
 #include "BatteryBPickup.h"
+#include "BatteryPickupGameMode.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -146,26 +147,32 @@ void ABatteryPickupCharacter::CollectBatteries()
 {
 	float batteryPower = 0.f;
 
-	TArray<AActor*>  collectAtors;
-	m_collectSphere->GetOverlappingActors(collectAtors);
+	ABatteryPickupGameMode *gameMode = Cast<ABatteryPickupGameMode>(UGameplayStatics::GetGameMode(this));
 
-	for(auto actor : collectAtors)
+	if (gameMode->GetCurrentState() == PlayState::EPlaying)
 	{
-		ABatteryBPickup * const testBattery = Cast<ABatteryBPickup>(actor);
+		TArray<AActor*>  collectAtors;
+		m_collectSphere->GetOverlappingActors(collectAtors);
 
-		if (testBattery && !testBattery->IsPendingKill() && testBattery->m_IsActive)
+		for (auto actor : collectAtors)
 		{
-			batteryPower += testBattery->m_powerLevel;
+			ABatteryBPickup * const testBattery = Cast<ABatteryBPickup>(actor);
 
-			testBattery->OnPickedUp();
-			testBattery->m_IsActive = false;
+			if (testBattery && !testBattery->IsPendingKill() && testBattery->m_IsActive)
+			{
+				batteryPower += testBattery->m_powerLevel;
+
+				testBattery->OnPickedUp();
+				testBattery->m_IsActive = false;
+			}
+		}
+
+		if (batteryPower > 0.f)
+		{
+			PowerUp(batteryPower);
 		}
 	}
 
-	if (batteryPower > 0.f)
-	{
-		PowerUp(batteryPower);
-	}
 }
 
 

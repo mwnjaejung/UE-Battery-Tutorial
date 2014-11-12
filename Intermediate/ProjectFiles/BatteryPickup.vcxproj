@@ -273,12 +273,14 @@
 		<ClCompile Include="..\..\Source\BatteryPickup\Private\BatteryPickupCharacter.cpp" />
 		<ClCompile Include="..\..\Source\BatteryPickup\Private\BatteryPickupGameMode.cpp" />
 		<ClCompile Include="..\..\Source\BatteryPickup\Private\BPickup.cpp" />
+		<ClCompile Include="..\..\Source\BatteryPickup\Private\GameOverHUD.cpp" />
 		<ClCompile Include="..\..\Source\BatteryPickup\Private\SpawnVolume.cpp" />
 		<ClInclude Include="..\..\Source\BatteryPickup\Public\BatteryBPickup.h" />
 		<ClInclude Include="..\..\Source\BatteryPickup\Public\BatteryPickup.h" />
 		<ClInclude Include="..\..\Source\BatteryPickup\Public\BatteryPickupCharacter.h" />
 		<ClInclude Include="..\..\Source\BatteryPickup\Public\BatteryPickupGameMode.h" />
 		<ClInclude Include="..\..\Source\BatteryPickup\Public\BPickup.h" />
+		<ClInclude Include="..\..\Source\BatteryPickup\Public\GameOverHUD.h" />
 		<ClInclude Include="..\..\Source\BatteryPickup\Public\SpawnVolume.h" />
 		<None Include="..\..\Source\BatteryPickup\Resources\Windows\BatteryPickup.ico" />
 		<ResourceCompile Include="..\..\Source\BatteryPickup\Resources\Windows\BatteryPickup.rc" />

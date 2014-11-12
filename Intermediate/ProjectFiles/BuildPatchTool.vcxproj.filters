@@ -6,7 +6,7 @@
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\BuildPatchTool\BuildPatchTool.Automation.cs" />
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\BuildPatchTool\BuildPatchTool.Build.cs" />
 		<Filter Include="Private">
-			<UniqueIdentifier>{AF50FF36-D383-4B9D-AC17-824371625107}</UniqueIdentifier>
+			<UniqueIdentifier>{14FBBF2C-0CC0-49DF-9FAA-AD495E2F49CE}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\BuildPatchTool\Private\BuildPatchToolMain.cpp">
 			<Filter>Private</Filter>

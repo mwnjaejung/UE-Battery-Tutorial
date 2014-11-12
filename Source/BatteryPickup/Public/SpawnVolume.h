@@ -30,8 +30,12 @@ class BATTERYPICKUP_API ASpawnVolume : public AActor
 
 	virtual void Tick(float DeltaSeconds) override;
 
+	void EnableSpawning();
+	void DisableSpawning();
 
 private:
+	bool m_isSpawningEnable;
+
 	float GetRandomSpawnDelay();
 	float m_SpawnDelay;
 	void SpawnPickup();

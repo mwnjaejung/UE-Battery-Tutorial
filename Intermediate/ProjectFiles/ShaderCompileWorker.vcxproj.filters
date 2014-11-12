@@ -4,20 +4,20 @@
 	<ItemGroup>
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\ShaderCompileWorker\ShaderCompileWorker.Target.cs" />
 		<Filter Include="Config">
-			<UniqueIdentifier>{612B9FD5-90E1-4C29-89DF-40AB215FDD47}</UniqueIdentifier>
+			<UniqueIdentifier>{3157B7CF-A298-4CA3-A951-08B72E6CB1C4}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Programs\ShaderCompileWorker\Config\DefaultEngine.ini">
 			<Filter>Config</Filter>
 		</None >
 		<None Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\ShaderCompileWorker\ShaderCompileWorker.Build.cs" />
 		<Filter Include="Private">
-			<UniqueIdentifier>{1ED02239-0063-4CBE-8256-3F91BA15183B}</UniqueIdentifier>
+			<UniqueIdentifier>{94E23143-AED8-478E-B140-793B909BB27C}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\ShaderCompileWorker\Private\ShaderCompileWorker.cpp">
 			<Filter>Private</Filter>
 		</ClCompile >
 		<Filter Include="Resources">
-			<UniqueIdentifier>{8FF90DDC-E482-4746-986A-016FFC9E7F44}</UniqueIdentifier>
+			<UniqueIdentifier>{8B956591-152F-4141-87CE-37BABB27F85A}</UniqueIdentifier>
 		</Filter>
 		<Manifest Include="..\..\..\UnrealEngine-4.5\Engine\Source\Programs\ShaderCompileWorker\Resources\Debug-Win32.manifest">
 			<Filter>Resources</Filter>
